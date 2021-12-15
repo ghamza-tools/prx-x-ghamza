@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jingle Bells</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", sans-serif;
+        background-color: rgb(19, 35, 75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+      }
+      h3 {
+        color: white;
+      }
+      .container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+      }
+      .snowflake {
+        color: #fff;
+        font-size: 1em;
+        font-family: Arial;
+        text-shadow: 0 0 1px #000;
+      }
+
+      @-webkit-keyframes snowflakes-fall {
+        0% {
+          top: -10%;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+      @-webkit-keyframes snowflakes-shake {
+        0% {
+          -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+        }
+        50% {
+          -webkit-transform: translateX(80px);
+          transform: translateX(80px);
+        }
+        100% {
+          -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+        }
+      }
+      @keyframes snowflakes-fall {
+        0% {
+          top: -10%;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+      @keyframes snowflakes-shake {
+        0% {
+          transform: translateX(0px);
+        }
+        50% {
+          transform: translateX(80px);
+        }
+        100% {
+          transform: translateX(0px);
+        }
+      }
+      .snowflake {
+        position: fixed;
+        top: -10%;
+        z-index: 9999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+        -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+        -webkit-animation-duration: 10s, 3s;
+        -webkit-animation-timing-function: linear, ease-in-out;
+        -webkit-animation-iteration-count: infinite, infinite;
+        -webkit-animation-play-state: running, running;
+        animation-name: snowflakes-fall, snowflakes-shake;
+        animation-duration: 10s, 3s;
+        animation-timing-function: linear, ease-in-out;
+        animation-iteration-count: infinite, infinite;
+        animation-play-state: running, running;
+      }
+      .snowflake:nth-of-type(0) {
+        left: 1%;
+        -webkit-animation-delay: 0s, 0s;
+        animation-delay: 0s, 0s;
+      }
+      .snowflake:nth-of-type(1) {
+        left: 10%;
+        -webkit-animation-delay: 1s, 1s;
+        animation-delay: 1s, 1s;
+      }
+      .snowflake:nth-of-type(2) {
+        left: 20%;
+        -webkit-animation-delay: 6s, 0.5s;
+        animation-delay: 6s, 0.5s;
+      }
+      .snowflake:nth-of-type(3) {
+        left: 30%;
+        -webkit-animation-delay: 4s, 2s;
+        animation-delay: 4s, 2s;
+      }
+      .snowflake:nth-of-type(4) {
+        left: 40%;
+        -webkit-animation-delay: 2s, 2s;
+        animation-delay: 2s, 2s;
+      }
+      .snowflake:nth-of-type(5) {
+        left: 50%;
+        -webkit-animation-delay: 8s, 3s;
+        animation-delay: 8s, 3s;
+      }
+      .snowflake:nth-of-type(6) {
+        left: 60%;
+        -webkit-animation-delay: 6s, 2s;
+        animation-delay: 6s, 2s;
+      }
+      .snowflake:nth-of-type(7) {
+        left: 70%;
+        -webkit-animation-delay: 2.5s, 1s;
+        animation-delay: 2.5s, 1s;
+      }
+      .snowflake:nth-of-type(8) {
+        left: 80%;
+        -webkit-animation-delay: 1s, 0s;
+        animation-delay: 1s, 0s;
+      }
+      .snowflake:nth-of-type(9) {
+        left: 90%;
+        -webkit-animation-delay: 3s, 1.5s;
+        animation-delay: 3s, 1.5s;
+      }
+      /* Demo Purpose Only*/
+      .demo {
+        font-family: "Raleway", sans-serif;
+        color: #fff;
+        display: block;
+        margin: 0 auto;
+        padding: 15px 0;
+        text-align: center;
+      }
+      .demo a {
+        font-family: "Raleway", sans-serif;
+        color: #000;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+  </head>
+  <body>
+    <h3 id="title">Press on the Logo</h3>
+    <div class="container" onclick="startAnimation()">
+      <svg
+        height="30%"
+        style="
+          fill-rule: nonzero;
+          clip-rule: evenodd;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        "
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns="http://www.w3.org/2000/svg"
+        xml:space="preserve"
+        width="30%"
+        version="1.1"
+        viewBox="0 0 251.529 256.552"
+      >
+        <path
+          id="Circle"
+          stroke="#000000"
+          fill-rule="evenodd"
+          stroke-opacity="0"
+          stroke-width="1"
+          d="M127.622+10.112C115.222+10.103+102.891+11.9571+91.042+15.612C89.3973+16.1257+87.8804+16.9829+86.592+18.127C75.0807+4.156+56.7308-2.21637+39.038+1.61299C32.4772+3.0194+28.2997+9.47912+29.7084+16.0394C31.1171+22.5996+37.5782+26.7749+44.138+25.364C56.668+22.7619+69.0474+30.4049+72.3352+42.7727C75.6229+55.1406+68.6728+67.9219+56.5047+71.8853C44.3365+75.8487+31.1921+69.6126+26.565+57.681C24.626+52.7201+24.4147+47.2507+25.965+42.155C27.8883+35.7054+24.2191+28.9178+17.7695+26.9945C11.3199+25.0712+4.53233+28.7404+2.609+35.19C-0.509465+45.4491-0.0785988+56.4599+3.832+66.444C6.30954+72.8232+10.1181+78.6012+15.004+83.393C14.4943+84.1053+14.0647+84.8716+13.723+85.678C7.42084+100.687+4.18795+116.806+4.215+133.084C4.215+200.884+59.573+256.052+127.621+256.052C195.669+256.052+251.029+200.885+251.029+133.084C251.029+65.283+195.667+10.112+127.622+10.112M127.622+231.755C73.017+231.755+28.594+187.489+28.594+133.084C28.573+120.202+31.0988+107.442+36.026+95.539C59.2536+102.103+83.7756+90.603+93.581+68.547C97.6923+59.3153+98.775+49.0189+96.674+39.134C97.2097+39.0614+97.7399+38.9528+98.261+38.809C107.772+35.8777+117.669+34.3918+127.622+34.401C182.222+34.401+226.646+78.671+226.646+133.084C226.646+187.497+182.223+231.755+127.622+231.755"
+          fill="#ffffff"
+          stroke-linecap="butt"
+          opacity="1"
+          stroke-linejoin="miter"
+        />
+        <path
+          id="Tree"
+          d="M131.857+172.798L134.57+189.971L119.736+189.971L122.448+172.798L88.3633+172.798L105.88+152.774L91.2974+152.774L109.274+132.225L97.2738+132.225L112.255+115.099L104.253+115.099L127.153+88.9245L150.055+115.099L142.051+115.099L157.032+132.225L145.032+132.225L163.008+152.774L148.423+152.774L165.942+172.798L131.857+172.798Z"
+          fill-rule="evenodd"
+          fill="#ffffff"
+          opacity="1"
+          style="visibility: hidden"
+        />
+        <path
+          id="Proxi"
+          stroke="#000000"
+          fill-rule="evenodd"
+          stroke-opacity="0"
+          stroke-width="1"
+          d="M137.299+96.8961L97.2747+96.8961L97.2747+197.444L122.916+197.444L122.916+170.541L137.299+170.541C161.037+170.541+175.201+156.419+175.201+132.769C175.201+110.303+161.037+96.8947+137.299+96.8947M122.916+120.897L136.306+120.897C150.562+120.897+150.562+130.339+150.562+133.444C150.562+142.162+145.9+146.396+136.306+146.396L122.916+146.396L122.916+120.897Z"
+          fill="#ffffff"
+          stroke-linecap="butt"
+          opacity="1"
+          stroke-linejoin="miter"
+        />
+      </svg>
+    </div>
+    <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+    </div>
+
+    <script>
+      const tween = KUTE.fromTo(
+        "#Proxi",
+        { path: "#Proxi" },
+        { path: "#Tree" },
+        { repeat: 0, duration: 10000 }
+      );
+
+      let isClicked = false;
+
+      const startAnimation = () => {
+        if (!isClicked) {
+          isClicked = true;
+          document.getElementById("title").innerHTML = " ";
+          tween.start();
+        }
+      };
+    </script>
+  </body>
+</html>
